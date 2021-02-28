@@ -7,4 +7,6 @@ renew = old_string
 for regex, replace in zip([metadata,dirinfo,lines], [r"\n", "", r"\n"]):
     renew = re.sub(regex, replace, renew)
 
-sys.stdout.write(renew)
+listed = sorted(renew.split("\n"))
+relisted = "\n".join(listed)
+sys.stdout.write(relisted)
